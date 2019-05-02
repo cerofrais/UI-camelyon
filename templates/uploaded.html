@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home page</title>
+
+</head>
+<body>
+    <h1> Home page to camelyon demo </h1>
+    <p> upload a file here:  </p>
+    <form id="upload-form" action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*">
+        <input type="submit">
+        <p>Uploaded : </p>
+        <img src="{{url_for('static',filename = img_name)}}">
+        <img src="{{url_for('static',filename = img_2)}}">
+    </form>
+    <p> Select a file to see working on pre uploaded files .</p>
+
+    <form action="/">
+        <select>
+          <option value="Img1">Image1</option>
+          <option value="Img2">Image2</option>
+
+        </select>
+        <input type="submit">
+    </form>
+
+</body>
+</html>
